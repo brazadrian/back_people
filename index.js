@@ -35,8 +35,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Hello, World!" });
 });
 
-/* mongodb+srv://admin:teste>@cluster0.vo9iwcf.mongodb.net/db_matheus?retryWrites=true&w=majority */
-
 // Entregar uma porta para o servidor
 
 mongoose
