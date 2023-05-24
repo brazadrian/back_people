@@ -6,6 +6,8 @@ const express = require("express"); // importa express
 const mongoose = require("mongoose"); // importa mongoose
 const app = express(); // cria o app express
 
+const cors = require('cors');
+
 const env = require("custom-env").env();
 
 const DB_USER = process.env.DB_USER;
@@ -24,10 +26,15 @@ app.use(express.json());
 
 // Rotas da aplicação
 
-//
+// Pessoas
 const personRoutes = require("./routes/personRoutes"); // importa as rotas de personRoutes
 
 app.use("/person", personRoutes); // usa as rotas de personRoutes
+
+// Sensores
+const sensorRoutes = require("./routes/sensor.route"); // importa as rotas de sensorRoutes
+
+app.use("/sensor", sensorRoutes); // usa as rotas de sensorRoutes
 
 // Rota get teste
 app.get("/", (req, res) => {
